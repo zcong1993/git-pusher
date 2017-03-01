@@ -1,0 +1,41 @@
+{
+  "name": "git-pusher",
+  "version": "0.0.1",
+  "description": "my great project",
+  "repository": {
+    "url": "zcong1993/git-pusher",
+    "type": "git"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "bin": "cli.js",
+  "scripts": {
+    "test": "jest && npm run lint",
+    "lint": "xo"
+  },
+  "author": "zcong1993 <1005997919@qq.com>",
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "jest-cli": "^18.1.0",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "space": 2,
+    "semicolon": false,
+    "envs": [
+      "jest"
+    ]
+  },
+  "dependencies": {
+    "execa": "^0.6.0",
+    "find-dir-path": "^0.0.3",
+    "listr": "^0.11.0",
+    "path-exists": "^3.0.0"
+  }
+}
