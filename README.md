@@ -2,6 +2,10 @@
 
 [![NPM version](https://img.shields.io/npm/v/git-pusher.svg?style=flat)](https://npmjs.com/package/git-pusher) [![NPM downloads](https://img.shields.io/npm/dm/git-pusher.svg?style=flat)](https://npmjs.com/package/git-pusher) [![Build Status](https://img.shields.io/circleci/project/zcong1993/git-pusher/master.svg?style=flat)](https://circleci.com/gh/zcong1993/git-pusher)
 
+> easy way to commit for git
+
+> project template [egoist/template-nm](https://github.com/egoist/template-nm)
+
 ## Install
 
 ```bash

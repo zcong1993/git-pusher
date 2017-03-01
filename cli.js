@@ -11,7 +11,7 @@ const green = chalk.green
 const data = meow({
   description: false,
   help: `
-    ${green('easy way to commit git')}
+    ${green('easy way to commit for git')}
 
     ${bold('Usage:')}
 
