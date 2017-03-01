@@ -11,7 +11,10 @@
     "index.js",
     "cli.js"
   ],
-  "bin": "cli.js",
+  "bin": {
+    "gp": "cli.js",
+    "git-pusher": "cli.js"
+  },
   "scripts": {
     "test": "jest && npm run lint",
     "lint": "xo"

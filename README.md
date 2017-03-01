@@ -1,21 +1,63 @@
 # git-pusher
 
-[![NPM version](https://img.shields.io/npm/v/git-pusher.svg?style=flat)](https://npmjs.com/package/git-pusher) [![NPM downloads](https://img.shields.io/npm/dm/git-pusher.svg?style=flat)](https://npmjs.com/package/git-pusher) [![Build Status](https://img.shields.io/circleci/project/zcong1993/git-pusher/master.svg?style=flat)](https://circleci.com/gh/zcong1993/git-pusher) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/zcong1993/donate)
+[![NPM version](https://img.shields.io/npm/v/git-pusher.svg?style=flat)](https://npmjs.com/package/git-pusher) [![NPM downloads](https://img.shields.io/npm/dm/git-pusher.svg?style=flat)](https://npmjs.com/package/git-pusher) [![Build Status](https://img.shields.io/circleci/project/zcong1993/git-pusher/master.svg?style=flat)](https://circleci.com/gh/zcong1993/git-pusher)
 
 ## Install
 
 ```bash
-yarn add git-pusher
+yarn global add git-pusher
 ```
 
 ## Usage
 
-```js
-const gitPusher = require('git-pusher')
-
-gitPusher()
-//=> foo
+```bash
+$ git-pusher [options]
+# or using alias 'gp'
 ```
+
+### Options
+
+#### --commit-message, -m
+type: string
+
+default: 'make it better'
+
+message for commit
+
+#### --any-branch, -a
+type: bool
+
+default: false
+
+working with any branch, default only for 'master'
+
+#### --no-check-ignore
+type: bool
+
+default: false
+
+not check if '.gitignore' exists in project root folder, be careful when set true
+
+#### --push, -p
+type: bool
+
+default: false
+
+commit and push
+
+#### --push-options
+type: string
+
+default: null
+
+extra push options, the push command bacome `git push --quiet options` if set
+
+#### --first, -f
+type: bool
+
+default: false
+
+not check remote history, can use like this `git-pusher -f --push-options="-u origin master"`
 
 ## Contributing
 
