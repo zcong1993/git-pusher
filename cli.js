@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const meow = require('meow')
 const chalk = require('chalk')
 const tasks = require('./')
@@ -7,7 +8,7 @@ const bold = chalk.bold
 const dim = chalk.dim
 const green = chalk.green
 
-const {input, flags} = meow({
+const data = meow({
   description: false,
   help: `
     ${green('easy way to commit git')}
@@ -41,7 +42,10 @@ const {input, flags} = meow({
   }
 })
 
-tasks(flags)
+tasks(data.flags)
   .run()
   .then(() => console.log(`\n ${chalk.gray.bgGreen.bold('success')} all done! \n`))
-  .catch(err => console.log(`\n ${chalk.gray.bgRed.bold('error')} ${err.message} \n`))
+  .catch(err => {
+    console.log(`\n ${chalk.gray.bgRed.bold('error')} ${err.message} \n`)
+    process.exit(1)
+  })
