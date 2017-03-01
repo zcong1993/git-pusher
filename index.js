@@ -87,7 +87,10 @@ module.exports = opts => {
     tasks.splice(2, 1)
   }
   if (!opts.push) {
-    tasks.pop()
+    tasks.splice(6, 2)
+  }
+  if (opts.first) {
+    tasks.splice(6, 1)
   }
 
   return new Listr(tasks)
