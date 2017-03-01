@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/git-pusher.svg?style=flat)](https://npmjs.com/package/git-pusher) [![NPM downloads](https://img.shields.io/npm/dm/git-pusher.svg?style=flat)](https://npmjs.com/package/git-pusher) [![Build Status](https://img.shields.io/circleci/project/zcong1993/git-pusher/master.svg?style=flat)](https://circleci.com/gh/zcong1993/git-pusher)
 
-> easy way to commit for git
+> easy way to commit git
 
 > project template [egoist/template-nm](https://github.com/egoist/template-nm)
 
@@ -25,7 +25,7 @@ type: string
 
 default: 'make it better'
 
-message for commit
+commit message
 
 #### --any-branch, -a
 type: bool
@@ -39,7 +39,7 @@ type: bool
 
 default: false
 
-not check if '.gitignore' exists in project root folder, be careful when set true
+not check whether '.gitignore' exists in project root folder, be careful when set true
 
 #### --push, -p
 type: bool
@@ -60,7 +60,7 @@ type: bool
 
 default: false
 
-not check remote history, can use like this `git-pusher -f --push-options="-u origin master"`
+no check remote history, can use like this `git-pusher -f --push-options="-u origin master"`
 
 ## Contributing
 
