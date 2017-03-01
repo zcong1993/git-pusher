@@ -12,7 +12,6 @@ yarn global add git-pusher
 
 ```bash
 $ git-pusher [options]
-# or using alias 'gp'
 ```
 
 ### Options
