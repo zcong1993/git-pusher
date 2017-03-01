@@ -71,7 +71,7 @@ module.exports = opts => {
     },
     {
       title: 'Push remote refs along with associated objects',
-      task: () => execa.stdout('git', ['push', '--quiet'].concat(opts.pushOptions.split(' ') || []))
+      task: () => execa.stdout('git', ['push', '--quiet'].concat(opts.pushOptions ? opts.pushOptions.split(' ') : []))
         .then(result => {
           if (result !== '') {
             throw new Error(`Push error: ${result}`)
