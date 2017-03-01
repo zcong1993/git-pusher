@@ -1,6 +1,6 @@
 const tasks = require('./')
 
-const opts = {push: true, commitMessage: 'init'}
+const opts = {push: true, commitMessage: 'test'}
 
 tasks(opts)
   .run()
