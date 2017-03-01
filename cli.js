@@ -43,5 +43,5 @@ const {input, flags} = meow({
 
 tasks(flags)
   .run()
-  .then(() => console.log(`\n ${chalk.gray.bgGreen.bold(success)} all done! \n`))
-  .catch(err => console.log(`\n ${chalk.gray.bgRed.bold(error)} ${err.message} \n`))
+  .then(() => console.log(`\n ${chalk.gray.bgGreen.bold('success')} all done! \n`))
+  .catch(err => console.log(`\n ${chalk.gray.bgRed.bold('error')} ${err.message} \n`))
