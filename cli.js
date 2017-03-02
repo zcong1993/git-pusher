@@ -42,9 +42,9 @@ const data = meow({
   }
 })
 
-tasks(data.flags)
-  .run()
-  .then(() => console.log(`\n ${chalk.gray.bgGreen.bold('success')} all done! \n`))
+tasks
+  .run(Object.assign({checkIgnore: true}, data.flags))
+  .then((ctx) => console.log(`\n ${chalk.gray.bgGreen.bold('success')} all done! ${ctx.commitMessage ? 'msg :' + ctx.commitMessage : ''}\n`))
   .catch(err => {
     console.log(`\n ${chalk.gray.bgRed.bold('error')} ${err.message} \n`)
     process.exit(1)

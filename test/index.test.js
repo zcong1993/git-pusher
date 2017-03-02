@@ -1,5 +1,5 @@
 const gitPusher = require('../')
 
 test('main', () => {
-  expect(typeof gitPusher).toBe('function')
+  expect(typeof gitPusher).toBe('object')
 })
