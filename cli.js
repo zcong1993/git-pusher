@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const meow = require('meow')
 const chalk = require('chalk')
+const updateNotifier = require('update-notifier')
 const tasks = require('./')
 
 const blue = chalk.blue
@@ -8,7 +9,7 @@ const bold = chalk.bold
 const dim = chalk.dim
 const green = chalk.green
 
-const data = meow({
+const cli = meow({
   description: false,
   help: `
     ${green('easy way to commit for git')}
@@ -42,9 +43,11 @@ const data = meow({
   }
 })
 
+updateNotifier({pkg: cli.pkg}).notify()
+
 tasks
-  .run(Object.assign({checkIgnore: true}, data.flags))
-  .then((ctx) => console.log(`\n ${chalk.gray.bgGreen.bold('success')} all done! ${ctx.commitMessage ? 'msg :' + ctx.commitMessage : ''}\n`))
+  .run(Object.assign({checkIgnore: true}, cli.flags))
+  .then(ctx => console.log(`\n ${chalk.gray.bgGreen.bold('success')} all done! ${ctx.commitMessage ? 'msg :' + ctx.commitMessage : ''}\n`))
   .catch(err => {
     console.log(`\n ${chalk.gray.bgRed.bold('error')} ${err.message} \n`)
     process.exit(1)
