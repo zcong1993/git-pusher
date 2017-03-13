@@ -3,6 +3,7 @@ const execa = require('execa')
 const Listr = require('listr')
 const findDirPath = require('find-dir-path')
 const pathExists = require('path-exists')
+const getEmoji = require('./emoji')
 
 const repositoryDir = findDirPath.sync('.git')
 
@@ -54,12 +55,15 @@ const tasks = [
   },
   {
     title: 'Record changes to the repository',
-    task: ctx => execa.stdout('git', ['commit', '-m', ctx.commitMessage || 'make it better', '--quiet'])
+    task: ctx => {
+      ctx.finalCommit = ctx.emoji ? ctx.commitMessage + getEmoji() : ctx.commitMessage
+      execa.stdout('git', ['commit', '-m', ctx.finalCommit || 'make it better', '--quiet'])
       .then(status => {
         if (status !== '') {
           throw new Error(`Record changes error: ${status}`)
         }
       })
+    }
   },
   {
     title: 'Check remote history',

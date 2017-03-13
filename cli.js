@@ -30,6 +30,8 @@ const cli = meow({
 
       ${blue('--push-options')}       ${dim(`# extra push options`)}
 
+      ${blue('--emoji, -e')}          ${dim(`# add a random emoji to commit`)}
+
       ${blue('--first, -f')}          ${dim(`# not check remote history, can use like this 'git-pusher -f --push-options="-u origin master"'`)}
   `
 }, {
@@ -39,7 +41,8 @@ const cli = meow({
     m: 'commitMessage',
     a: 'anyBranch',
     p: 'push',
-    f: 'first'
+    f: 'first',
+    e: 'emoji'
   }
 })
 
@@ -47,7 +50,7 @@ updateNotifier({pkg: cli.pkg}).notify()
 
 tasks
   .run(Object.assign({checkIgnore: true}, cli.flags))
-  .then(ctx => console.log(`\n ${chalk.gray.bgGreen.bold('success')} all done! ${ctx.commitMessage ? 'msg :' + ctx.commitMessage : ''}\n`))
+  .then(ctx => console.log(`\n ${chalk.gray.bgGreen.bold('success')} all done! ${ctx.finalCommit ? 'msg :' + ctx.finalCommit : ''}\n`))
   .catch(err => {
     console.log(`\n ${chalk.gray.bgRed.bold('error')} ${err.message} \n`)
     process.exit(1)
