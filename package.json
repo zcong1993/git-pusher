@@ -9,7 +9,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "cli.js"
+    "cli.js",
+    "emoji.js"
   ],
   "bin": "cli.js",
   "scripts": {
