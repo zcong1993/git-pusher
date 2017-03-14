@@ -62,6 +62,13 @@ default: false
 
 no check remote history, can use like this `git-pusher -f --push-options="-u origin master"`
 
+#### --emoji, -e
+type: bool
+
+default: false
+
+add a random to commit message
+
 ## Contributing
 
 1. Fork it!
