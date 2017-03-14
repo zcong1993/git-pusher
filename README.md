@@ -67,7 +67,7 @@ type: bool
 
 default: false
 
-add a random to commit message
+add a random emoji to commit message
 
 ## Contributing
 
